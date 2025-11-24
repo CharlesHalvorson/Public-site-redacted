@@ -24,3 +24,19 @@ img {
     width: 500%;
     height: 500%;
 }
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+#space{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+html{
+    background-image: image-set(url(8_orgid_17df2b8b-61cb-4353-b3cd-51379a7523cb.jpg));
+}
