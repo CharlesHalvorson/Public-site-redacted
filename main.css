@@ -1,8 +1,19 @@
 h1{
     font-family: "Permanent Marker", cursive;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
 }
 button{
     font-family: "Permanent Marker", cursive;
+}
+#space a {
+    font-family: "Permanent Marker", cursive;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
 }
 .permanent-marker-regular {
     font-family: "Permanent Marker", cursive;
