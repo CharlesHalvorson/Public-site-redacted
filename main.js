@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const newVideoButton = document.getElementById('new-video-button');
+    const newVideo = document.getElementById('new-video');
+
+    newVideoButton.addEventListener('click', function() {
+        if (newVideo.style.display === 'block') {
+            newVideo.style.display = 'none';
+            newVideo.pause();
+        } else {
+            newVideo.style.display = 'block';
+            newVideo.play();
+        }
+    });
+
     video.addEventListener('play', () => {
         audio.currentTime = video.currentTime;
     });
