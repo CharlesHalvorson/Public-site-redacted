@@ -48,6 +48,10 @@ img {
     justify-content: center;
     flex-direction: column;
 }
-html{
+/* html{
     background-image: image-set(url(8_orgid_17df2b8b-61cb-4353-b3cd-51379a7523cb.jpg));
-}
+} */
+ #Jayci{
+    width: 100%;
+    height: 100%;
+ }
