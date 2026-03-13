@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const hackyButton = document.getElementById('hacky-button');
+    const hackyContainer = document.getElementById('hacky-container');
+
+    hackyButton.addEventListener('click', function() {
+        if (hackyContainer.style.display === 'grid') {
+            hackyContainer.style.display = 'none';
+        } else {
+            hackyContainer.style.display = 'grid';
+        }
+    });
+
     const greenShirtContainer = document.getElementById('green-shirt-container');
 
     greenJacketGuyButton.addEventListener('click', function() {

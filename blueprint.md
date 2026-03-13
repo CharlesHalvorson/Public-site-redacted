@@ -1,26 +1,36 @@
 # Project Blueprint
 
 ## Overview
-This project is a personal website for Jayci, with interactive elements to reveal and hide content. It's built with HTML, CSS, and JavaScript, and features a responsive design.
+
+This project is a personalized website for a user named Jayci. It includes interactive elements to display images and videos, as well as a 3D model viewer.
 
 ## Implemented Features
 
-### General
-* **Responsive Design:** The website is designed to work on both mobile and desktop devices.
-* **Interactive Content:** The website uses buttons to toggle the visibility of hidden content, such as images and videos.
+### Initial Setup
+- **HTML Structure:** A basic HTML structure with a main heading and a container for buttons.
+- **CSS Styling:** Basic styling for the buttons and image containers.
+- **JavaScript Interactivity:**
+    - **"Press if you are in fact Jayci" Button:** Toggles the display of a grid of singer images and reveals the "green jacket guy" button.
+    - **"Press to see what came up when i searched finnish pop singer green jacket" Button:** Toggles the display of a grid of images of a man in a green shirt.
+    - **"press if you want some motivation" Button:** Plays a motivational video and audio.
+    - **"Click this for a little fun" Button:** Plays a fun video.
+    - **"Click here for another video" Button:** Plays another video.
+    - **"inside_joke" Button:** Displays a 3D model of the ISS with a zoom slider.
+    - **Black Cat Image:** Displays an alert when clicked.
 
-### Specific
-* **Greeting:** The website displays a greeting to Jayci.
-* **Singers Section:** A button toggles a grid of images of singers.
-* **"Green Jacket Guy" Section:** A button toggles a grid of images of a man in a green jacket.
-* **Motivational Video:** A button toggles a video with subtitles and audio. The video is from the `video` folder and the audio is from the root directory.
-* **Fun Video:** A button toggles a video. The video is from the main directory.
-* **Inside Joke 3D object:** A button toggles a rotating 3D object. This is implemented using the Three.js library.
-* **Zoom Slider:** A slider allows the user to control the zoom of the 3D scene.
-* **Loading Message:** A loading message is displayed while the 3D model is loading.
+### "Hacky" Button Fix
+- **Problem:** The "Hacky" button was not working because it had the same ID as another button.
+- **Solution:**
+    - Assigned a unique ID to the "Hacky" button (`hacky-button`) and its corresponding image container (`hacky-container`) in `index.html`.
+    - Added a new event listener in `main.js` to toggle the visibility of the `hacky-container` when the `hacky-button` is clicked.
 
-### Bug Fixes
-* **Audio Playback:** Fixed an issue where the audio for the motivational video would not play automatically due to browser autoplay policies.
+## Current Task
 
-## Current Plan
-*   No active plan. The project is in a stable state.
+### Make the "Hacky" section button work like the others
+
+**Plan:**
+1.  **Analyze the code:** Review `index.html` and `main.js` to understand why the "Hacky" button is not working.
+2.  **Identify the issue:** The "Hacky" button and its associated image container have duplicate IDs, which is causing a conflict.
+3.  **Fix the HTML:** Assign unique IDs to the "Hacky" button and its container.
+4.  **Fix the JavaScript:** Add a new event listener to `main.js` to handle the click event for the newly identified "Hacky" button.
+5.  **Update the blueprint:** Document the changes in this `blueprint.md` file.
