@@ -34,6 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const newPhotoButton = document.getElementById('new-photo-button');
+    const newPhotoContainer = document.getElementById('new-photo-container');
+
+    newPhotoButton.addEventListener('click', function() {
+        if (newPhotoContainer.style.display === 'block') {
+            newPhotoContainer.style.display = 'none';
+        } else {
+            newPhotoContainer.style.display = 'block';
+        }
+    });
+
+    const anotherPhotoButton = document.getElementById('another-photo-button');
+    const anotherPhotoContainer = document.getElementById('another-photo-container');
+
+    anotherPhotoButton.addEventListener('click', function() {
+        if (anotherPhotoContainer.style.display === 'block') {
+            anotherPhotoContainer.style.display = 'none';
+        } else {
+            anotherPhotoContainer.style.display = 'block';
+        }
+    });
+
     const motivationButton = document.getElementById('motivation');
     const video = document.getElementById('motivation-video');
     const audio = document.getElementById('motivation-audio');
