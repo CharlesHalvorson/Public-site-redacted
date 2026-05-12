@@ -2,20 +2,46 @@
 <html lang="en">
     
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayci's Werbsite</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayci's Werbsite</title>
+<script src="secandary.js"></script>
+<link rel="stylesheet" href="main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
-<header>!!!UNDER RENOVATION!!!</header>
-<a href="eugene_page.html">eugene</a>
-<a href="dictionary.html">dictionary</a>
+<header>
+    <div id="header-logo">
+        <a href="index.html">
+            <img id=picture src="images_main/techsolve_solutions_logo_no_name.png" alt="TechSolve Solutions Logo"> 
+        </a>
+        <a href="index.html"><h2 id="title">TechSolve Solutions</h2></a>
+            <nav id="header-contact-mobile-nav">
+                <div id="mobile-nav">
+                    <i class="fa-solid fa-bars fa-2xl"></i>
+                </div>
+            </nav>
+    </div>
+    <nav id="header-bottom-nav" style="display: block">
+        <ul>
+            <li><a class="nav" href="index_subpages/about_us/about_us.html">About Us</a></li>
+            <li><a class="nav" href="index_subpages/newsletter/newsletter.html">Newsletter</a></li>
+            <li><a class="nav" href="index_subpages/online_booking/booking.html">Online Booking</a></li>
+            <li><a class="nav" href="#"><s>Search</s> (Under-Construction)</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- <a href="eugene_page.html">eugene</a>
+<a href="dictionary.html">dictionary</a> -->
 <body>
     <div id="buttons">
-        <h1>WELCOME TO THE JAYCI WErBSITE!</h1>
+        <!-- <h1>WELCOME TO THE JAYCI WErBSITE!</h1> -->
+         <p></p>
+         <p></p>
+         <p></p>
+         <p></p>
+         <p></p>
         <button id="first" type="button">Press if you are in fact Jayci.</button>
         <div id="singers-container" style="display: none;">
             <img src="singers/download (1).jpg" alt="singer">
@@ -66,20 +92,20 @@
         <video id="new-video" style="display: none;" controls>
             <source src="video/v09044g40000c3skdbjc77u6akenpjq0.mov.mp4" type="video/mp4">
         </video>
-        <a>
+        <div>
             <img id="button1" src="">
-            <p id="text1"></p>
-            <button type="button" onclick="document.getElementById('button1').src='image.png';document.getElementById('text1').innerHTML = 'Solo Quiro MAS! Even if were living in a mad world, even if theres no more gods to pray for... Solo Quiro...   Solo Quiro... MAS'">Mr.Silver</button>
-        </a>
-        <a>
+            <p class="text" style="display: none;" id="text">"Solo Quiro MAS! Even if were living in a mad world, even if theres no more gods to pray for... Solo Quiro...   Solo Quiro... MAS"</p>
+            <button type="button" onclick="document.getElementById('button1').src='image.png';document.getElementById('text').style.display = 'block'">Mr.Silver</button>
+        </div>
+        <div>
             <img id="button2" src="">
-            <p id="text2"></p>
-            <button type="button" onclick="document.getElementById('button2').src='image copy.png';document.getElementById('text1').innerHTML = 'HAH HE IS A FISH'">The ONE and ONLY!</button>
-        </a>
-        <a>
+            <p class="text" style = "display: none;" id="text2">HAH HAH HES A FISH!</p>
+            <button type="button" onclick="document.getElementById('button2').src='image copy.png';document.getElementById('text2').style.display = 'block'">The ONE and ONLY!</button>
+        </div>
+        <div>
             <Button onclick="document,getElementById('image3').src = 'image copy 2.png'">OH NO its the bad Biznu</button>
             <img src="" id="image3">
-        </a>
+            </div>
         <audio id="motivation-audio" src="Rob Schneider  you can do it .mp3"></audio>
         <button id="inside_joke" type="button"><img src="download.jpg" alt=""></button>
         <p id="loading-message" style="display: none; text-align: center;">please wait a couple of seconds.</p>
