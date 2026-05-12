@@ -231,3 +231,35 @@ deepskyblue;
     color: 
   deepskyblue;
   }
+  #title{
+    position: absolute;
+    /* display: flex; */
+    left: 50px;
+    border-style: solid;
+    padding: 11.5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: larger;
+    font-family: "Baskervville";
+    color: white;
+    border-color: black;
+  @media screen and (prefers-color-scheme: dark){
+    border-color: white;
+  }
+  }
+  #picture{
+    float: left;
+    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+    height: auto;    /* Maintains the aspect ratio by adjusting height proportionally */
+    display: block;
+    display: flex;
+    height: 48px;
+    border: solid 3px black;
+    background-color: rgb(133, 0, 0);
+  @media screen and (prefers-color-scheme: dark){
+    background-color: var(--background);
+    border-color: white;
+  }
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
