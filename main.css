@@ -1,3 +1,11 @@
+/* CSS Utilities */
+@import url('utilities.css');
+/* Theme */
+@import url('themes/default.css');
+/* Native Styles */
+@import url('native.css');
+@layer wa-native, wa-utilities, wa-color-palette, wa-color-variant, wa-theme, wa-theme-dimension, wa-theme-overrides;
+
 #funny{
     margin-top: 20px;
     display: grid;
@@ -156,110 +164,110 @@ img {
 deepskyblue;
 }
 #header-logo {
-    text-align: center;
-    padding: 15px 0;
-    background-color: var(--background);
-  }
-  
-  #header-contact-mobile-nav {
-    /* grid-area: header-contact-mobile-nav; */
-    background-color: rgb(133, 0, 0);
-  @media screen and (prefers-color-scheme: dark){
-    background-color: var(--background);
-  }
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #mobile-nav {
-    color: black;
-    padding: 01.5em;
-    cursor: pointer;
-    /* display:flex; */
-  @media screen and (prefers-color-scheme: dark){
-      color:white;
-  }
-  }
-  .fa-solid{
-    position: absolute;
-    right: 2%;
-    /* display:flex; */
-  }
-  
+  text-align: center;
+  padding: 15px 0;
+  background-color: var(--background);
+}
+
+#header-contact-mobile-nav {
+  /* grid-area: header-contact-mobile-nav; */
+  background-color: rgb(133, 0, 0);
+@media screen and (prefers-color-scheme: dark){
+  background-color: var(--background);
+}
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mobile-nav {
+  color: black;
+  padding: 01.5em;
+  cursor: pointer;
+  /* display:flex; */
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
+}
+.fa-solid{
+  position: absolute;
+  right: 2%;
+  /* display:flex; */
+}
+
+#header-bottom-nav {
+  grid-area: header-bottom-nav;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+@media screen and (prefers-color-scheme: dark){
   #header-bottom-nav {
-    grid-area: header-bottom-nav;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
   }
-  
-  @media screen and (prefers-color-scheme: dark){
-    #header-bottom-nav {
-      color:rgb(0, 0, 0);
-      background-color: rgb(0, 0, 0);
-    }
-  }
-  
-  #header-bottom-nav ul {
-    border-top: 1px solid lightgrey;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  
-  #header-bottom-nav ul li {
-    border-bottom: 1px solid lightgrey;
-    width: 100%;
-  }
-  
-  #header-bottom-nav ul li a {
-  /*   background-color: yellow; */
-    color: rgb(0, 0, 0);
-    display: flex;
-  
-    font-size: 1.2em;
-    border-bottom: 0.25em solid transparent;
-  
-    /* padding: 20px; */
-    width: 100%;
-  @media screen and (prefers-color-scheme: dark){
-      color:rgb(255, 255, 255);
-  }
-  }
-  
-  #header-bottom-nav ul li a:hover,
-  #header-bottom-nav ul li a.active{
-    color: 
-  deepskyblue;
-  }
-  #title{
-    position: absolute;
-    /* display: flex; */
-    left: 50px;
-    border-style: solid;
-    padding: 11.5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: larger;
-    font-family: "Baskervville";
-    color: white;
-    border-color: black;
-  @media screen and (prefers-color-scheme: dark){
-    border-color: white;
-  }
-  }
-  #picture{
-    float: left;
-    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
-    height: auto;    /* Maintains the aspect ratio by adjusting height proportionally */
-    display: block;
-    display: flex;
-    height: 48px;
-    border: solid 3px black;
-    background-color: rgb(133, 0, 0);
-  @media screen and (prefers-color-scheme: dark){
-    background-color: var(--background);
-    border-color: white;
-  }
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
+}
+
+#header-bottom-nav ul {
+  border-top: 1px solid lightgrey;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#header-bottom-nav ul li {
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+}
+
+#header-bottom-nav ul li a {
+/*   background-color: yellow; */
+  color: rgb(0, 0, 0);
+  display: flex;
+
+  font-size: 1.2em;
+  border-bottom: 0.25em solid transparent;
+
+  /* padding: 20px; */
+  width: 100%;
+@media screen and (prefers-color-scheme: dark){
+    color:rgb(255, 255, 255);
+}
+}
+
+#header-bottom-nav ul li a:hover,
+#header-bottom-nav ul li a.active{
+  color: 
+deepskyblue;
+}
+#title{
+  position: absolute;
+  /* display: flex; */
+  left: 50px;
+  border-style: solid;
+  padding: 11.5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: larger;
+  font-family: "Baskervville";
+  color: white;
+  border-color: black;
+@media screen and (prefers-color-scheme: dark){
+  border-color: white;
+}
+}
+#picture{
+  float: left;
+  max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+  height: auto;    /* Maintains the aspect ratio by adjusting height proportionally */
+  display: block;
+  display: flex;
+  height: 48px;
+  border: solid 3px black;
+  background-color: rgb(133, 0, 0);
+@media screen and (prefers-color-scheme: dark){
+  background-color: var(--background);
+  border-color: white;
+}
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
