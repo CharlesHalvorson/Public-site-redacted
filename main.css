@@ -95,7 +95,7 @@ img {
 
 #header-contact-mobile-nav {
   /* grid-area: header-contact-mobile-nav; */
-  background-color: rgb(133, 0, 0);
+  background-color: #6E0C15;
 @media screen and (prefers-color-scheme: dark){
   background-color: var(--background);
 }
