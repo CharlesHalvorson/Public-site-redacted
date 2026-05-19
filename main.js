@@ -199,12 +199,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const cornbutton = document.getElementById('cornbutton');
     const corntainer = document.getElementById('corn');
+    const cornpic = document.getElementById('cornpic');
 
     cornbutton.addEventListener('click', function() {
         if (corntainer.style.display === 'none') {
             corntainer.style.display = 'block';
+            cornpic.style.display = 'block';
         } else {
             corntainer.style.display = 'none';
+            cornpic.style.display = 'none';
         }
     });
 
