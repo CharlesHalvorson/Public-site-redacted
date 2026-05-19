@@ -196,6 +196,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+    const cornbutton = document.getElementById('cornbutton');
+    const corntainer = document.getElementById('corn');
+
+    cornbutton.addEventListener('click', function() {
+        if (corntainer.style.display === 'none') {
+            corntainer.style.display = 'block';
+        } else {
+            corntainer.style.display = 'none';
+        }
+    });
+
+    const fishpic = document.getElementById('fishpic');
+    const fishbutton = document.getElementById('button2');
+    const fishtext = document.getElementById('text2');
+
+    fishbutton.addEventListener('click', function() {
+        if (fishpic.style.display === 'none') {
+            fishpic.style.display = 'block';
+            fishtext.style.display = 'block';
+        } else {
+            fishpic.style.display = 'none';
+            fishtext.style.display = 'none';        }
+    });
+
+    const silverpic = document.getElementById('silverpic');
+    const silverbutton = document.getElementById('button');
+    const silvertext = document.getElementById('text');
+
+    silverbutton.addEventListener('click', function() {
+        if (silverpic.style.display === 'none') {
+            silverpic.style.display = 'block';
+            silvertext.style.display = 'block';
+        } else {
+            silverpic.style.display = 'none';
+            silvertext.style.display = 'none';        }
+    });
+
+    const bizpic = document.getElementById('bizimage');
+    const bizbutton = document.getElementById('bizbutton');
+
+    bizbutton.addEventListener('click', function() {
+        if (bizpic.style.display === 'none') {
+            bizpic.style.display = 'block';
+        } else {
+            bizpic.style.display = 'none';        }
+    });
+
     const blackCat = document.getElementById('black-cat');
 
     if (blackCat) {
