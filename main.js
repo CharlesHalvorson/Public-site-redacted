@@ -203,8 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     cornbutton.addEventListener('click', function() {
         if (corntainer.style.display === 'none') {
-            corntainer.style.display = 'block';
-            cornpic.style.display = 'block';
+            corntainer.style.display = 'grid';
+            cornpic.style.display = 'grid';
         } else {
             corntainer.style.display = 'none';
             cornpic.style.display = 'none';
@@ -217,8 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fishbutton.addEventListener('click', function() {
         if (fishpic.style.display === 'none') {
-            fishpic.style.display = 'block';
-            fishtext.style.display = 'block';
+            fishpic.style.display = 'grid';
+            fishtext.style.display = 'grid';
         } else {
             fishpic.style.display = 'none';
             fishtext.style.display = 'none';        }
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     silverbutton.addEventListener('click', function() {
         if (silverpic.style.display === 'none') {
-            silverpic.style.display = 'block';
-            silvertext.style.display = 'block';
+            silverpic.style.display = 'grid';
+            silvertext.style.display = 'grid';
         } else {
             silverpic.style.display = 'none';
             silvertext.style.display = 'none';        }
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     bizbutton.addEventListener('click', function() {
         if (bizpic.style.display === 'none') {
-            bizpic.style.display = 'block';
+            bizpic.style.display = 'grid';
         } else {
             bizpic.style.display = 'none';        }
     });

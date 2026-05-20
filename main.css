@@ -1,9 +1,6 @@
 /* CSS Utilities */
-@import url('utilities.css');
 /* Theme */
-@import url('themes/default.css');
 /* Native Styles */
-@import url('native.css');
 @layer wa-native, wa-utilities, wa-color-palette, wa-color-variant, wa-theme, wa-theme-dimension, wa-theme-overrides;
 
 #funny{
@@ -73,13 +70,11 @@ img {
     width: 500%;
     height: 500%;
 }
-#buttons{
+.buttons{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
-
 }
 #space{
     display: flex;
