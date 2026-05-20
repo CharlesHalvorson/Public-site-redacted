@@ -1,6 +1,3 @@
-/* CSS Utilities */
-/* Theme */
-/* Native Styles */
 @layer wa-native, wa-utilities, wa-color-palette, wa-color-variant, wa-theme, wa-theme-dimension, wa-theme-overrides;
 
 #funny{
@@ -36,6 +33,7 @@ h1, .text{
 .def{
   border: rgb(26, 0, 0) groove 5px;
   border-radius: 10px;
+  background-color: white;
 }
 
 button{
