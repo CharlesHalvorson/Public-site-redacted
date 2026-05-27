@@ -200,14 +200,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const cornbutton = document.getElementById('cornbutton');
     const corntainer = document.getElementById('corn');
     const cornpic = document.getElementById('cornpic');
+    const cornpic2 = document.getElementById('cornpic2');
 
     cornbutton.addEventListener('click', function() {
         if (corntainer.style.display === 'none') {
             corntainer.style.display = 'grid';
             cornpic.style.display = 'grid';
+            cornpic2.style.display = 'grid';
         } else {
             corntainer.style.display = 'none';
             cornpic.style.display = 'none';
+            cornpic2.style.display = 'none';
         }
     });
 
