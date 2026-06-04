@@ -250,6 +250,16 @@ document.addEventListener('DOMContentLoaded', function() {
             bizpic.style.display = 'none';        }
     });
 
+    const macbutton = document.getElementById('macbutton');
+    const macvideo = document.getElementById('macvideo');
+
+    macbutton.addEventListener('click', function() {
+        if (macvideo.style.display === 'none') {
+            macvideo.style.display = 'grid';
+        } else {
+            macvideo.style.display = 'none';        }
+    });
+
     const blackCat = document.getElementById('black-cat');
 
     if (blackCat) {
