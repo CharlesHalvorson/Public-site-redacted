@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // GLTF Loader
             const loader = new THREE.GLTFLoader();
             loader.load(
-                'ISS_stationary.glb',
+                'graggler.glb',
                 function (gltf) {
                     loadingMessage.style.display = 'none';
                     const model = gltf.scene;

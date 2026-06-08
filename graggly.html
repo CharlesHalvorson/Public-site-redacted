@@ -57,8 +57,59 @@
         <br>
         <br>
         <br>
-
+    <button id="show-graggle-button">Show Graggle</button>
+    <div id="graggle-container" style="display: none; width: 500px; height: 500px; margin: auto;"></div>
+    <input type="range" id="graggle-zoom-slider" min="10" max="200" value="100" style="display: none; margin: auto; width: 500px;">
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        document.getElementById('show-graggle-button').addEventListener('click', () => {
+            document.getElementById('graggle-container').style.display = 'block';
+            document.getElementById('graggle-zoom-slider').style.display = 'block';
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(500, 500);
+            document.getElementById('graggle-container').appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(0, 1, 1);
+            scene.add(directionalLight);
+
+            let model;
+            const loader = new THREE.GLTFLoader();
+            loader.load('graggler.glb', (gltf) => {
+                model = gltf.scene;
+                scene.add(model);
+            });
+
+            const textureLoader = new THREE.TextureLoader();
+            textureLoader.load('download (1).jpg', (texture) => {
+                scene.background = texture;
+            });
+
+            camera.position.z = 100;
+
+            const zoomSlider = document.getElementById('graggle-zoom-slider');
+            zoomSlider.addEventListener('input', (e) => {
+                camera.position.z = e.target.value;
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                if (model) {
+                    model.rotation.y += 0.01;
+                }
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+    </script>
 </body>
 <footer>
    
