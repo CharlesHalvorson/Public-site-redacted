@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Add background
             const textureLoader = new THREE.TextureLoader();
-            textureLoader.load('download (1).jpg', function(texture) {
+            textureLoader.load('images/download (1).jpg', function(texture) {
                 scene.background = texture;
             });
 
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // GLTF Loader
             const loader = new THREE.GLTFLoader();
             loader.load(
-                'ISS_stationary.glb',
+                '3d/ISS_stationary.glb',
                 function (gltf) {
                     loadingMessage.style.display = 'none';
                     const model = gltf.scene;
@@ -260,11 +260,11 @@ document.addEventListener('DOMContentLoaded', function() {
             macvideo.style.display = 'none';        }
     });
 
-    const blackCat = document.getElementById('black-cat');
-
-    if (blackCat) {
+    document.addEventListener('DOMContentLoaded', function() {
+        const blackCat = document.getElementById('black-cat');
+    
         blackCat.addEventListener('click', function() {
             alert('Thank you daemon. you found aemon. hip hip............................horay hip hip............................horay hip hip............................horay');
         });
-    }
+    });
 });

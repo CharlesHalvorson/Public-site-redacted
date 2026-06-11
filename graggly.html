@@ -50,27 +50,32 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
     <button id="show-graggle-button">Show Graggle</button>
     <div id="graggle-container" style="display: none; width: 500px; height: 500px; margin: auto;"></div>
     <input type="range" id="graggle-zoom-slider" min="10" max="200" value="100" style="display: none; margin: auto; width: 500px;">
+        <br>
+        <br>
+    <button id="show-still-graggle-button">Show Still Graggle</button>
+    <div id="still-graggle-container" style="display: none; width: 500px; height: 500px; margin: auto; position: relative;">
+        <div id="still-graggle-textbox" style="display: none; position: absolute; top: calc(40% - 4.5cm); left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 15px; border-radius: 10px; border: 2px solid black; z-index: 10; text-align: center; max-width: 80%;"></div>
+    </div>
+    <div id="still-graggle-controls" style="display: none; text-align: center; margin-top: 10px;">
+        <input type="text" id="still-graggle-text-input" placeholder="Make Graggle say something...">
+        <button id="still-graggle-text-submit">Say it</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script>
+        // Rotating Graggle
         document.getElementById('show-graggle-button').addEventListener('click', () => {
             document.getElementById('graggle-container').style.display = 'block';
             document.getElementById('graggle-zoom-slider').style.display = 'block';
+            
+            if (document.getElementById('graggle-container').querySelector('canvas')) return;
 
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.1, 1000);
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer();
             renderer.setSize(500, 500);
             document.getElementById('graggle-container').appendChild(renderer.domElement);
@@ -83,20 +88,19 @@
 
             let model;
             const loader = new THREE.GLTFLoader();
-            loader.load('graggler.glb', (gltf) => {
+            loader.load('3d/graggler.glb', (gltf) => {
                 model = gltf.scene;
                 scene.add(model);
             });
 
             const textureLoader = new THREE.TextureLoader();
-            textureLoader.load('download (1).jpg', (texture) => {
+            textureLoader.load('images/download (1).jpg', (texture) => {
                 scene.background = texture;
             });
 
             camera.position.z = 100;
 
-            const zoomSlider = document.getElementById('graggle-zoom-slider');
-            zoomSlider.addEventListener('input', (e) => {
+            document.getElementById('graggle-zoom-slider').addEventListener('input', (e) => {
                 camera.position.z = e.target.value;
             });
 
@@ -105,6 +109,79 @@
                 if (model) {
                     model.rotation.y += 0.01;
                 }
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+
+        // Still, talking Graggle
+        document.getElementById('show-still-graggle-button').addEventListener('click', () => {
+            document.getElementById('still-graggle-container').style.display = 'block';
+            document.getElementById('still-graggle-controls').style.display = 'block';
+
+            if (document.getElementById('still-graggle-container').querySelector('canvas')) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setClearColor(0x000000, 0);
+            renderer.setSize(500, 500);
+            // Enable shadows
+            renderer.shadowMap.enabled = true;
+            document.getElementById('still-graggle-container').appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(5, 10, 7.5);
+            // Configure light for shadows
+            directionalLight.castShadow = true;
+            directionalLight.shadow.mapSize.width = 1024;
+            directionalLight.shadow.mapSize.height = 1024;
+            directionalLight.shadow.camera.near = 0.5;
+            directionalLight.shadow.camera.far = 50;
+            scene.add(directionalLight);
+
+            const loader = new THREE.GLTFLoader();
+            loader.load('3d/graggler.glb', (gltf) => {
+                const model = gltf.scene;
+                // Reset rotation and then rotate -75 degrees
+                model.rotation.y = -75 * Math.PI / 180;
+                // Make model cast shadows
+                model.traverse(function (child) {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                    }
+                });
+                scene.add(model);
+
+                // Add a plane to receive shadows, positioned at the model's feet
+                const modelBox = new THREE.Box3().setFromObject(model);
+                const planeGeometry = new THREE.PlaneGeometry(20, 20);
+                const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.5 });
+                const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+                plane.rotation.x = -Math.PI / 2;
+                plane.position.y = modelBox.min.y; // Position plane at the bottom of the model
+                plane.receiveShadow = true;
+                scene.add(plane);
+            });
+            
+            // Set a closer camera position for a "zoomed in" look
+            camera.position.set(0, 0, 10);
+
+            document.getElementById('still-graggle-text-submit').addEventListener('click', () => {
+                const text = document.getElementById('still-graggle-text-input').value;
+                const textbox = document.getElementById('still-graggle-textbox');
+                if (text) {
+                    textbox.textContent = text;
+                    textbox.style.display = 'block';
+                } else {
+                    textbox.style.display = 'none';
+                }
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
                 renderer.render(scene, camera);
             }
             animate();
